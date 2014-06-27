@@ -59,7 +59,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="dateModified", type="datetime")
+     * @ORM\Column(name="dateModified", type="datetime",nullable=true)
      */
     private $dateModified;
 	

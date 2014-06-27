@@ -10,7 +10,7 @@ use Agronautes\PlateformeBundle\Entity\Article;
 
 // Mes formulaires types
 use Agronautes\PlateformeBundle\Form\ArticleType;
-use Agronautes\PlateformeBundle\Form\ajoutArticleType;
+use Agronautes\PlateformeBundle\Form\ajouterArticleType;
 
 
 
@@ -64,7 +64,7 @@ class PlateformeController extends Controller
 	public function ajouterArticleAction()
     {	
 		$article = new Article;
-		$form = $this->createForm(new ajoutArticleType, $article);
+		$form = $this->createForm(new ajouterArticleType, $article);
 	
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
