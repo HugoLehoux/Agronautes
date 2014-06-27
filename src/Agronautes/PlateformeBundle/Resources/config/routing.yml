@@ -1,0 +1,25 @@
+pf_accueil:
+    path:     /
+    defaults: { _controller: AgronautesPlateformeBundle:Plateforme:index }
+
+pf_lire_article:
+    path:      /article/{id}
+    defaults:  { _controller: AgronautesPlateformeBundle:Plateforme:lireArticle }
+    requirements:
+        id:  \d+
+
+pf_ajouter_article:
+    path:      /article/ajouter
+    defaults:  { _controller: AgronautesPlateformeBundle:Plateforme:ajouterArticle }
+
+pf_modifier_article:
+    path:      /article/modifier/{id}
+    defaults:  { _controller: AgronautesPlateformeBundle:Plateforme:modifierArticle }
+    requirements:
+        id:  \d+
+
+pf_supprimer_article:
+    path:      /article/supprimer/{id}
+    defaults:  { _controller: AgronautesPlateformeBundle:Plateforme:supprimerArticle }
+    requirements:
+        id:  \d+

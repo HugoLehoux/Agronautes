@@ -1,0 +1,4 @@
+agronautes_plateforme:
+    resource: "@AgronautesPlateformeBundle/Resources/config/routing.yml"
+    prefix:   /Explorer
+

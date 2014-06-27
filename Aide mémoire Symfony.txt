@@ -1,0 +1,38 @@
+Aide mémoire pour Symfony 2.5
+
+-------------------------------------------------------------------------------
+
+COMMANDES
+
+php bin/console doctrine:database:create # Créer la base de données
+
+php bin/console generate:bundle # Générer un bundle
+
+php bin/console generate:doctrine:entity # Créer une entité dans la base de données
+
+php bin/console generate:doctrine:entities # Créer les Getters et Setters
+
+php bin/console doctrine:schema:update --force # Checker la requête SQL qui sera envoyée
+
+php bin/console doctrine:schema:update --force # Mettre à jour la structure de la BDD
+
+php bin/console router:debug # Connaître toutes les routes principales
+
+php bin/console cache:clear # Nettoyer le cache
+
+-------------------------------------------------------------------------------
+
+RELATIONS
+
+One-to-one
+
+Many-to-one unidirectionnel
+
+Many-to-one bidirectionnel
+
+One-to-Many
+
+Many-to-Many
+
+-------------------------------------------------------------------------------
+

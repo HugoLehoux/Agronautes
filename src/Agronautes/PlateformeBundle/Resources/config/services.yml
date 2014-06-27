@@ -1,0 +1,7 @@
+parameters:
+#    agronautes_plateforme.example.class: Agronautes\PlateformeBundle\Example
+
+services:
+#    agronautes_plateforme.example:
+#        class: %agronautes_plateforme.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
