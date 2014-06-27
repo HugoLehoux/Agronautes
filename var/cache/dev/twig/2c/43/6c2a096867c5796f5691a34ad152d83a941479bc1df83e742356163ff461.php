@@ -33,6 +33,11 @@ class __TwigTemplate_2c436c2a096867c5796f5691a34ad152d83a941479bc1df83e742356163
 \t<h2> Ajouter un article</h2>
 </div>
 
+  ";
+        // line 9
+        $this->env->loadTemplate("AgronautesPlateformeBundle:Plateforme:formulaire.html.twig")->display($context);
+        // line 10
+        echo "
 ";
     }
 
@@ -48,6 +53,6 @@ class __TwigTemplate_2c436c2a096867c5796f5691a34ad152d83a941479bc1df83e742356163
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  40 => 10,  38 => 9,  31 => 4,  28 => 3,);
     }
 }

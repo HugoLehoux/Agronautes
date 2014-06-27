@@ -3,32 +3,123 @@
 namespace Agronautes\PlateformeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+
+// Mes entités
+use Agronautes\PlateformeBundle\Entity\Article;
+
+// Mes formulaires types
+use Agronautes\PlateformeBundle\Form\ArticleType;
+use Agronautes\PlateformeBundle\Form\ajoutArticleType;
+
+
 
 class PlateformeController extends Controller
 {
+
+
+
+
     public function indexAction()
     {
         return $this->render('AgronautesPlateformeBundle:Plateforme:index.html.twig');
     }
 	
-	public function lireArticleAction()
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public function lireArticleAction(Article $article)
     {
-        return $this->render('AgronautesPlateformeBundle:Plateforme:lireArticle.html.twig');
+		
+        return $this->render('AgronautesPlateformeBundle:Plateforme:lireArticle.html.twig', 
+		array('article' => $article)
+		);
     }
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public function ajouterArticleAction()
-    {
-		if( $this->get('request')->getMethod() == 'POST' ){      
-      $this->get('session')->getFlashBag()->add('notice', 'Votre article a bien été enregistré !');
-       return $this->redirect( $this->generateUrl('pf_lire_article', array('id' => 5)) );
+    {	
+		$article = new Article;
+		$form = $this->createForm(new ajoutArticleType, $article);
+	
+		$request = $this->get('request');
+		if ($request->getMethod() == 'POST') {
+			$form->bind($request);
+
+			if ($form->isValid()) {
+			  $em = $this->getDoctrine()->getManager();
+			  $em->persist($article);
+			  $em->flush();
+
+			  // A changer pour l'adresse de l'article
+			return $this->redirect($this->generateUrl('pf_accueil'));
+			}
+		  }
+		  
+		return $this->render('AgronautesPlateformeBundle:Plateforme:ajouterArticle.html.twig', array(
+			'form' => $form->createView(),
+			));
+
     }
-        return $this->render('AgronautesPlateformeBundle:Plateforme:ajouterArticle.html.twig');
-    }
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public function modifierArticleAction()
     {
         return $this->render('AgronautesPlateformeBundle:Plateforme:modifierArticle.html.twig');
     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public function supprimerArticleAction()
     {

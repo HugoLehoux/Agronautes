@@ -16,6 +16,8 @@ php bin/console doctrine:schema:update --force # Checker la requête SQL qui sera
 
 php bin/console doctrine:schema:update --force # Mettre à jour la structure de la BDD
 
+php bin/console doctrine:generate:form SdzBlogBundle:Article # Créer un form type
+
 php bin/console router:debug # Connaître toutes les routes principales
 
 php bin/console cache:clear # Nettoyer le cache
